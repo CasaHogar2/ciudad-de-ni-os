@@ -1,0 +1,78 @@
+<!results.html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados - Un DIFerente Hogar</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">Acerca de</a></li>
+      <li><a href="research.html">Investigación</a></li>
+      <li><a href="results.html">Resultados</a></li>
+      <li><a href="proposals.html">Propuestas</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>Resultados</h1>
+    <section>
+      <h2>Gráficos y Visualizaciones</h2>
+      <canvas id="grafico1" width="400" height="200"></canvas>
+      <canvas id="grafico2" width="400" height="200"></canvas>
+    </section>
+    <section>
+      <h2>Análisis de Hallazgos</h2>
+      <p>
+        El 94.7% está de acuerdo en que el abandono familiar influye mucho en el desarrollo emocional de los niños. El 47.2% considera que la falta de amor o afecto es el principal factor de los problemas emocionales.
+      </p>
+    </section>
+    <section>
+      <h2>Interpretación de Datos</h2>
+      <p>
+        Los resultados muestran la necesidad de apoyo psicológico y programas de integración para mejorar el bienestar emocional de los niños en casas hogar.
+      </p>
+    </section>
+  </main>
+  <script>
+    // Ejemplo de gráfico 1
+    const ctx1 = document.getElementById('grafico1').getContext('2d');
+    new Chart(ctx1, {
+      type: 'pie',
+      data: {
+        labels: ['Mujeres', 'Hombres'],
+        datasets: [{
+          data: [61, 39],
+          backgroundColor: ['#1976d2', '#64b5f6']
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+    // Ejemplo de gráfico 2
+    const ctx2 = document.getElementById('grafico2').getContext('2d');
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['Falta de amor', 'Maltrato', 'Estilo de vida', 'Genética', 'No seguro'],
+        datasets: [{
+          label: 'Factores principales (%)',
+          data: [47.2, 20, 15, 10, 7.8],
+          backgroundColor: '#1976d2'
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
